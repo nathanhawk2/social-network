@@ -31,9 +31,9 @@ function deleteUser(req, res) {
 
 function updateUser(req, res) {
   User.findOneAndUpdate({ _id: req.params.userId }, { $set: req.body }, { runValidators: true, new: true })
-    .then((results) => !result
+    .then((result) => !result
       ? res.status(404)
-      : res.json(results)
+      : res.json(result)
     );
 };
 
